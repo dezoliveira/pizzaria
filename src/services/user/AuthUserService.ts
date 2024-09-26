@@ -20,9 +20,9 @@ class AuthUserService {
     }
 
     // Verify if hash matches with password
-    const passwordHash = await compare(password, user.password)
+    const passwordMatch = await compare(password, user.password)
 
-    if (!passwordHash) {
+    if (!passwordMatch) {
       throw new Error("user/password incorrect");
     }
 
