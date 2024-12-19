@@ -12,6 +12,8 @@ import { CreateProductController } from './controllers/products/CreateProductCot
 
 import { ListByCategoryController } from './controllers/products/ListByCategoryController'
 
+import { CreateOrderController } from './controllers/order/CreateOrderController'
+
 import { isAuthenticated } from './middlewares/isAuthenticated'
 import uploadConfig from './config/multer'
 
@@ -36,5 +38,8 @@ router.get('/category', isAuthenticated, new ListCategoryController().handle)
 // product
 router.post('/product', isAuthenticated, upload.single("file"), new CreateProductController().handle)
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
+
+// order
+router.post('/order', isAuthenticated, new CreateOrderController().handle)
 
 export { router }
