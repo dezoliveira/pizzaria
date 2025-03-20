@@ -42,4 +42,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 })
 
 // server watch
-app.listen(3000, () => console.table(['Listen on http://localhost:3000']))
+app.listen(process.env.PORT, () => console.table(['Listen on http://localhost:3333']))
